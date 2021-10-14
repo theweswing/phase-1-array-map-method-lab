@@ -11,6 +11,19 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
+function caseGivenWord(word){
+  const cappedWord= word.replace(word[0],word[0].toUpperCase())
+  return cappedWord
+}
+
+function caseGivenTitle(title){
+  let arrayOfTitleWords=title.split(" ")
+  let cappedTitleWords=arrayOfTitleWords.map(caseGivenWord)
+  let aProperTitle= cappedTitleWords.join(" ")
+  return aProperTitle
+}
+
+function titleCased(uncasedTitles){
+  let casedTitles= uncasedTitles.map(caseGivenTitle)
+  return casedTitles
 }
